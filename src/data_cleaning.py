@@ -74,3 +74,20 @@ df = remove_invalid_rows(df)
 
 os.makedirs("data/processed", exist_ok=True)
 df.to_csv("data/processed/sales_data_clean.csv", index=False)
+
+if __name__ == "__main__":
+    raw_path = "data/raw/sales_data_raw.csv"
+    cleaned_path = "data/processed/sales_data_clean.csv"
+
+df_raw = load_data(raw_path)
+df_clean = clean_column_names(df_raw)
+df_clean = clean_text_columns(df_clean)
+df_clean = handle_missing_values(df_clean)
+df_clean = remove_invalid_rows(df_clean)
+
+import os
+os.makedirs(os.path.dirname(cleaned_path), exist_ok=True)
+df_clean.to_csv(cleaned_path, index=False)
+
+print("Cleaning complete. First few rows of cleaned data:")
+print(df_clean.head())
