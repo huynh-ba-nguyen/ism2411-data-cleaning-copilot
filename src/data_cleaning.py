@@ -1,4 +1,3 @@
-# Purpose: Clean the raw sales data and save a processed version for analysis
 import pandas as pd
 import os
 
