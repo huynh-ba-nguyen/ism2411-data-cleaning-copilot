@@ -1,3 +1,6 @@
 I used the copilot extension on visual studio code to help generate python functions that clean data. The extension helped suggest code for various functions such as cleaning column names, handling missing values and more.
+
 I made sure the code looks for price and quantity values before removing rows to avoid miscalculations. I also made functions for cleaning text columns and removing invalid rows separate so the code would be more readable.
+
 I learned how to use the copilot extension on visual studio code, how to write prompts with enough details and instructions that the AI would generate efficient code suggestions for me.
+
