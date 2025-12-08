@@ -18,11 +18,14 @@ def clean_text_columns(df):
     return df
 
 def handle_missing_values(df):
-    df = df.dropna(subset=["price", "quantity"])
+    cols_to_check = [col for col in ["price", "quantity"] if col in df.columns]
+    if cols_to_check:
+        df = df.dropna(subset=cols_to_check)
     return df
 
 def remove_invalid_rows(df):
-    df = df[(df["price"] >= 0) & (df["quantity"] >= 0)]
+    if "price" in df.columns and "quantity" in df.columns:
+        df = df[(df["price"] >= 0) & (df["quantity"] >= 0)]
     return df
 
 if __name__ == "__main__":
