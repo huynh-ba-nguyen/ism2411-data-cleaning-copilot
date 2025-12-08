@@ -30,6 +30,7 @@ if __name__ == "__main__":
     cleaned_path = "data/processed/sales_data_clean.csv"
 
     df = load_data(raw_path)
+    print("Columns in raw CSV:", df.columns)
     df = clean_column_names(df)
     df = clean_text_columns(df)
     df = handle_missing_values(df)
