@@ -36,8 +36,8 @@ if __name__ == "__main__":
     df = remove_invalid_rows(df)
 
     os.makedirs(os.path.dirname(cleaned_path), exist_ok=True)
-
+     # Save cleaned data
     df.to_csv(cleaned_path, index=False)
-
+    
     print("Cleaning complete. First few rows of cleaned data:")
     print(df.head())
